@@ -119,7 +119,7 @@ Great, we’ve caught our edge cases.  Let’s call that method in prime_upto(nu
 
 Come on RSPEC, don’t fail me now.  GREEEEEN. Now for the hard stuff.
 
-A prime number is a number that is only divisible by 1 and itself.  So 2 is the first prime number, and 3 is a prime number, then 7….etc. To think about it differently, any number that is divisible by another number besides 1 and Itself, is not prime.  That means for a given_number, that if any number between 2 and given_number minus one gives a remainder of 0, It is not prime: So we need to use a .each loop to check the range of numbers, leading up to given_number -1,  that do not produce a remainder of 0.  If they do not, return true
+A prime number is a number that is only divisible by 1 and itself.  So 2 is the first prime number, and 3 is a prime number, then 5,7….etc. To think about it differently, any number that is divisible by another number besides 1 and Itself, is not prime.  That means for a given_number, that if any number between 2 and given_number minus one gives a remainder of 0, It is not prime: So we need to use a .each loop to check the range of numbers, leading up to given_number -1,  that do not produce a remainder of 0.  If they do not, return true
 
 Let’s write some tests!
 
