@@ -27,10 +27,10 @@ Find all the prime numbers up to a given number. (1,000,000)
 Step 1: Figure out what I’m getting.
 The problem states that I’ll be receiving a number.  We can begin by defining a method
 
-def prime_upto(given_number)
+    def prime_upto(given_number)
 
 
-end
+    end
 
 (All new code in red)
 
@@ -52,26 +52,26 @@ This might not be necessary for the interview, but it will help you with all of 
 
 
 
-describe ‘#prime_upto(given_number)’ do
+    describe ‘#prime_upto(given_number)’ do
 
-     context ‘when the number given is negative, float, 0, or letter’ do
-             it ‘tells the user “INVALID ENTRY” and exits” do
-                    expect(prime_upto(-1)).to eq(“Invalid Entry”)
-                    expect(prime_upto(1)).to eq(“Invalid Entry”)
+         context ‘when the number given is negative, float, 0, or letter’ do
+                 it ‘tells the user “INVALID ENTRY” and exits” do
+                        expect(prime_upto(-1)).to eq(“Invalid Entry”)
+                        expect(prime_upto(1)).to eq(“Invalid Entry”)
 
-                    expect(prime_upto(“HELLO")).to eq(“Invalid Entry”)
-                    expect(prime_upto(0)).to eq(“Invalid Entry”)
-                      expect(prime_upto(1.9999)).to eq(“Invalid Entry”)
-            end
-     end
+                        expect(prime_upto(“HELLO")).to eq(“Invalid Entry”)
+                        expect(prime_upto(0)).to eq(“Invalid Entry”)
+                          expect(prime_upto(1.9999)).to eq(“Invalid Entry”)
+                end
+         end
 
 
-     context ‘if the number 8 is given’ do
-          it 'should return all primes before it return’ do
-                   expect(prime_upto(8).to eq([2,3,5,7])
-          end
-     end
-end
+         context ‘if the number 8 is given’ do
+              it 'should return all primes before it return’ do
+                       expect(prime_upto(8).to eq([2,3,5,7])
+              end
+         end
+    end
 
 
 Ok, I think we have handled our edge cases, and we have started to think about the problem…now………
@@ -81,38 +81,38 @@ Step 5:  Break it into parts and solve.
 Here is what we currently have:
 
 
-def prime_upto(given_number)
+    def prime_upto(given_number)
 
-end
+    end
 
 
 
 We know we need to return an array of all the prime numbers up to given_number.  How should we think about that?  First, and most important, we need to check if the number is prime.  We should make a new method first, that checks if any number is prime.
 
 
-def is_prime?(given_number)
+    def is_prime?(given_number)
 
 
-end
+    end
 
 
 From our edge cases, we know that we want to return “Invalid Entry”, so let’s start there.
 
 
-def is_prime?(given_number)
-  if given_number.is_a?(Fixnum) && given_number.is_a?(Integer) && given_number > 1
+    def is_prime?(given_number)
+      if given_number.is_a?(Fixnum) && given_number.is_a?(Integer) && given_number > 1
 
-     DO SOMETHING
-  else
-    "Invalid Entry"
-  end
-end
+         DO SOMETHING
+      else
+        "Invalid Entry"
+      end
+    end
 
 Great, we’ve caught our edge cases.  Let’s call that method in prime_upto(number) to check the tests.
 
-def prime_upto(given_number)
-     is_prime?(given_number)
-end
+    def prime_upto(given_number)
+      is_prime?(given_number)
+    end
 
 
 Come on RSPEC, don’t fail me now.  GREEEEEN. Now for the hard stuff.
@@ -121,68 +121,68 @@ A prime number is a number that is only divisible by 1 and itself.  So 2 is the 
 
 Let’s write some tests!
 
-describe ‘#isPrime?(given_number)’ do
-     context ‘given these numbers it should equal the expected output’ #this is ugly but you get the gist.  AND HEY. at least i am testing
-              it ‘should return true’ do
-                    expect(is_prime?(3).to eq(true)
-                    expect(is_prime?(5).to eq(true)
-                     expect(is_prime?(101).to eq(true)
-               end
+    describe ‘#isPrime?(given_number)’ do
+         context ‘given these numbers it should equal the expected output’ #this is ugly but you get the gist.  AND HEY. at least i am testing
+                  it ‘should return true’ do
+                        expect(is_prime?(3).to eq(true)
+                        expect(is_prime?(5).to eq(true)
+                         expect(is_prime?(101).to eq(true)
+                   end
 
 
-               it ’should return false’ do
-                     expect(is_prime?(4).to eq(false)
-                     expect(is_prime?(10).to eq(false)
-                     expect(is_prime?(15).to eq(false)
-               end
-     end
-end
+                   it ’should return false’ do
+                         expect(is_prime?(4).to eq(false)
+                         expect(is_prime?(10).to eq(false)
+                         expect(is_prime?(15).to eq(false)
+                   end
+         end
+    end
 
 
-def is_prime?(given_number)
-  if given_number.is_a?(Fixnum) && given_number.is_a?(Integer) && given_number > 1
-     (2..(given_number-1).each do |num|
-          if given_number % num == 0
-              false
-          end
-     end
-       true
-   else
-    "Invalid Entry"
-  end
-end
+    def is_prime?(given_number)
+      if given_number.is_a?(Fixnum) && given_number.is_a?(Integer) && given_number > 1
+         (2..(given_number-1).each do |num|
+              if given_number % num == 0
+                  false
+              end
+         end
+           true
+       else
+        "Invalid Entry"
+      end
+    end
 
 
 Ok, let’s run RSPEC.  WHAT?!?!? EVERY SINGLE NUMBER IS PRIME!??!? Hmmm… I must have done something wrong.  Oh!!!! As it stands, ruby will say false every time a number is not prime, but at the end it always returns true!  I need it to exit the loop if ANY of the numbers are not prime.  So it can’t just be false, it must return false.
 
 
-def is_prime?(given_number)
-  if given_number.is_a?(Fixnum) && given_number.is_a?(Integer) && given_number > 1
-     (2..(given_number-1).each do |num|
-          if given_number % num == 0
-              return false
-          end
-     end
-       true
-   else
-    "Invalid Entry"
-  end
-end
+    def is_prime?(given_number)
+      if given_number.is_a?(Fixnum) && given_number.is_a?(Integer) && given_number > 1
+         (2..(given_number-1).each do |num|
+              if given_number % num == 0
+                  return false
+              end
+         end
+           true
+       else
+        "Invalid Entry"
+      end
+    end
 
 
 Let’s run this.  Boom!! We now can tell you if a number is prime or not.  Now back to getting all the prime numbers up to a certain number.
 
 We should do another loop, all the way upto given_number, and check if the current number is prime.  If it is, we should inject it into the array we want to return.  If it is not, we go to the next number!  Upto sounds cool… I wonder if ruby has a method that does that.  OHH RUBY, you are such a GEM!! Let’s use UPTO!
 
-def prime_upto(given_number)
-    all_primes = []
-    3.upto(given_number) do |n|
-      if is_prime?(n)
-        all_primes << n
-      end
+    def prime_upto(given_number)
+        all_primes = []
+        3.upto(given_number) do |n|
+          if is_prime?(n)
+            all_primes << n
+          end
+        end
+        all_primes
     end
-    all_primes
-end
 
 Let’s RSPEC it, and GREEN it passes.  Now, let’s open up console, and run our program, giving it a 1000. So fast! Now let’s do 10,000!.  Hmmm, slowing down.  That took half a second.  But it works. Let’s trying 100,000! …. hmmmm this is taking forever.  That took 30 seconds.  I can only imagine how long it’s going to take if we do a million, we’re going to have to speed this up!  But HOW?!?
 
@@ -192,18 +192,18 @@ I do not expect anyone to know this, but! You actually do not have to check ever
 
 Lets work this back into our solution.
 
-def is_prime?(given_number)
-  if given_number.is_a?(Fixnum) && given_number.is_a?(Integer) && given_number > 1
-    2.upto(Math.sqrt(given_number - 1).ceil) do |x|
-      if given_number % x == 0
-        return false
+    def is_prime?(given_number)
+      if given_number.is_a?(Fixnum) && given_number.is_a?(Integer) && given_number > 1
+        2.upto(Math.sqrt(given_number - 1).ceil) do |x|
+          if given_number % x == 0
+            return false
+          end
+        end
+         true
+      else
+        "Invalid Entry"
       end
     end
-     true
-  else
-    "Invalid Entry"
-  end
-end
 
 And now let’s see how long it takes.  prime_upto(100000) .. wow, that went from 33 seconds to 0.28 seconds.  now for a million DRUMROLL PLEASE!!!
 
