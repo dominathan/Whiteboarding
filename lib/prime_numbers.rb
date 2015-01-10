@@ -17,7 +17,7 @@ end
 #Check is prime, if is, shovel
 def prime_upto(given_number)
   all_primes = []
-  3.upto(given_number) do |n|
+  2.upto(given_number) do |n|
     if is_prime?(n)
       all_primes << n
     end
