@@ -6,7 +6,9 @@ PRIME NUMBERS UPTO 1,000,000
 
 
 
-Whiteboarding problems is something you will probably experience in the coming months for a ruby on rails job.  What!? I can’t use my computer to code?!  This problem is horseshit! I’m going to try and do a weekly lecture, where we will
+Whiteboarding problems is something you will probably experience in the coming months for a ruby on rails job.  What!? I can’t use my computer to code?!  Fraid not Timmy.
+
+I’m going to try and do a weekly lecture, where we will
      A) start practice the type of problems you may be asked to solve together
      B) learn BigO notation
      C) learn data structures, and how they operate.
