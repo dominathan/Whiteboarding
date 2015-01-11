@@ -229,7 +229,7 @@ Lets work this back into our solution.
 
 And now let’s see how long it takes.  prime_upto(100000) .. wow, that went from 33 seconds to 0.28 seconds.  now for a million DRUMROLL PLEASE!!!
 
-5.4399999999999995 seconds.  if we set that to a variable and count it. We have 78,497 numbers that are prime between 1 and a million.  Crazy.
+5.4399999999999995 seconds.  if we set that to a variable and count it. We have 78,498 numbers that are prime between 1 and a million.  Crazy.
 
 But what about why it took so long.  Why does it take exponentially more time to run prime_upto(1000) vs prime_upto(10000) vs prime_upto(100000)?
 We will get to that next time. When we start talking about BIG-O notation!
