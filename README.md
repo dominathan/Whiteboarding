@@ -9,15 +9,17 @@ PRIME NUMBERS UPTO 1,000,000
 Whiteboarding problems is something you will probably experience in the coming months for a ruby on rails job.  What!? I can’t use my computer to code?!  Fraid not Timmy.
 
 I’m going to try and do a weekly lecture, where we will
-     A) start practice the type of problems you may be asked to solve together
+
+     A) start whiteboarding the type of problems you may be asked to solve together
+
      B) learn BigO notation
-     C) learn data structures, and how they operate.
-     D) learn some basic algorithms, like merge sort
+
+     C) learn basic data structures
+
+     D) learn basic algorithms, like merge sort
 
 
 Not necessarily in this order.
-
-
 
 
 PROBLEM SOLVING — This is how I do it, but this is not THE way to do it, and any other way may be just as good or better. Please feel free to criticize anything on here and/or provide your own method to problem solving.
