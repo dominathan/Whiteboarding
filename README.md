@@ -112,11 +112,21 @@ From our edge cases, we know that we want to return “Invalid Entry”, so let�
       end
     end
 
-Great, we’ve caught our edge cases.  Let’s call that method in prime_upto(number) to check the tests.
+Great, we’ve caught our edge cases. Let's update our SPEC file.
 
-    def prime_upto(given_number)
-      is_prime?(given_number)
-    end
+
+      describe '#is_prime?(given_number)' do
+
+        context "when the number is given is negative float, 0 or letter" do
+          it 'tells the user "Invalid Entry" and exits' do
+            expect(is_prime?(-1)).to eq('Invalid Entry')
+            expect(is_prime?(1)).to eq('Invalid Entry')
+            expect(is_prime?("Hello")).to eq('Invalid Entry')
+            expect(is_prime?(0)).to eq('Invalid Entry')
+            expect(is_prime?(1.9999)).to eq('Invalid Entry')
+          end
+        end
+      end
 
 
 Come on RSPEC, don’t fail me now.  GREEEEEN. Now for the hard stuff.
@@ -143,7 +153,7 @@ Let’s write some tests!
 
 AND update the other tests
 
-      describe '#prime_upto(given_number)' do
+      describe '#is_prime?(given_number)' do
 
         context "when the number is given is negative float, 0 or letter" do
           it 'tells the user "Invalid Entry" and exits' do
