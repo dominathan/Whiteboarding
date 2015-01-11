@@ -71,7 +71,7 @@ This might not be necessary for the interview, but it will help you with all of 
 
 
          context ‘if the number 8 is given’ do
-              it 'should return all primes before it return’ do
+              it 'should return all primes before 8’ do
                        expect(prime_upto(8).to eq([2,3,5,7])
               end
          end
