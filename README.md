@@ -210,7 +210,7 @@ We should do another loop, all the way upto given_number, and check if the curre
 
     def prime_upto(given_number)
         all_primes = []
-        3.upto(given_number) do |n|
+        2.upto(given_number) do |n|
           if is_prime?(n)
             all_primes << n
           end

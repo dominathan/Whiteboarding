@@ -18,4 +18,6 @@ d = [-1,-2,-3,-4,-5]
 puts largest_index(b)
 puts largest_index(c)
 puts largest_index(d)
-
+# def largest_index(array)
+#   array.index(array.max)
+# end
