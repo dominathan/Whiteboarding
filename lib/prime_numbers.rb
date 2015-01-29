@@ -25,5 +25,11 @@ def prime_upto(given_number)
   all_primes
 end
 
+Benchmark.measure { prime_upto(10) }
+Benchmark.measure { prime_upto(100) }
+Benchmark.measure { prime_upto(1000) }
+Benchmark.measure { prime_upto(10000) }
+Benchmark.measure { prime_upto(100000) }
+Benchmark.measure { prime_upto(1000000) }
 #OTHER WAY TO CALCULATE PRIME
 #Prime.prime(3)
